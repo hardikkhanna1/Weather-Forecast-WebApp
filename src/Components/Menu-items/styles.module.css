@@ -1,0 +1,11 @@
+.item{
+    font-size:medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.item :hover{
+    color: brown;
+}
+.link{
+    text-decoration: none;
+    color: white;
+}

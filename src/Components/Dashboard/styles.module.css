@@ -1,0 +1,50 @@
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .dark{
+    background-color: black;
+    color: white;
+  }
+  .light{
+    background-color: white;
+    color: black;
+  }
+  
+  .heading {
+    text-align: center;
+    /* color: #333; */
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 10px;
+    /* color: #555; */
+  }
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .weather-info {
+    text-align: center;
+  }
+  
+  .h3 {
+    margin-top: 0;
+    /* color: #333; */
+  }
+  
+  .p {
+    margin: 5px 0;
+    /* color: #555; */
+  }
