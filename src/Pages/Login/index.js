@@ -12,6 +12,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isError,setisError] = useState(false);
   var {login} = useAuth();
   var {setuserInfo} = useInfo()
 
@@ -65,6 +66,11 @@ const LoginPage = () => {
         login();
         navigate('/home');
       }
+      else{
+        setisError(true);
+        setUsername('');
+        setPassword('');
+      }
     }
 
   };
@@ -83,6 +89,7 @@ const LoginPage = () => {
         <Input type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <Button label="Login" onClick={handleLogin} />
       </form>
+      {isError && <p className={styles.error}>Please enter correct username and password</p>}
     </div>
     </div>
   );

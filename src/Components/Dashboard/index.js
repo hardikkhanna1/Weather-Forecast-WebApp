@@ -6,6 +6,7 @@ import { useAuth } from '../../Auth';
 
 const WeatherDashboard = ({DarkMode}) => {
   const [weatherData, setWeatherData] = useState(null);
+  const [cityError,setcityError] = useState(false);
   const {userInfo} = useInfo();
   const {isLoggedIn} = useAuth();
   const API_KEY = '7cf7513e537a4eb18e78f7343c7c54ad';
@@ -23,11 +24,12 @@ const WeatherDashboard = ({DarkMode}) => {
         );
 
         if (!response.ok) {
+          setcityError(true);
           throw new Error('City not found');
         }
 
         const data = await response.json();
-        console.log(data.data[0]);
+        setcityError(false);
         setWeatherData(data);
       } catch (error) {
         console.error('Error fetching weather data:', error.message);
@@ -48,6 +50,7 @@ const WeatherDashboard = ({DarkMode}) => {
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
+      {cityError && <p className={styles.error}>Enter a valid city name</p>}
 
       {weatherData && (
         <div className={styles.weatherInfo}>
