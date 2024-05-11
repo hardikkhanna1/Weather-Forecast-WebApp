@@ -32,7 +32,7 @@ const WeatherDashboard = ({DarkMode}) => {
         setcityError(false);
         setWeatherData(data);
       } catch (error) {
-        console.error('Error fetching weather data:', error.message);
+        console.error('Error in fetching weather data:', error.message);
         setWeatherData(null);
       }
     };
